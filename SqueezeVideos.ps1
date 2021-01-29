@@ -18,7 +18,7 @@ ffmpeg -i "$Path" -crf $Crf -vf scale=$Scale "$env:TEMP\$baseName.m4v"
 
 if ($LASTEXITCODE -eq 0) {
     Remove-Item -Force "$Path"
-    Copy-Item -Force "$env:TEMP\$baseName.m4v" "$Path\$baseName.m4v"
+    Copy-Item -Force "$env:TEMP\$baseName.m4v" "$origPath\$baseName.m4v"
     Remove-Item -Force "$env:TEMP\$baseName.m4v"
 }
 else {
